@@ -1,0 +1,40 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Canosho",
+            "short_description": "project is all about providing consulting service to customer",
+            "description": "Canosho is a consulting service application where the seeker book the service which is provided by the provider according to the provider's availability",
+            "image": "./assets/img/canosho.png",
+            "url": "https://www.canosho.com/",
+            "category": "Web"
+        },
+        {
+            "id": 2,
+            "name": "Myntra Clone",
+            "short_description": "exact clone of myntra by using react for the frontend and django restapi for backend",
+            "description": "Exact clone of Myntra by using React for the frontend and Django REST API for backend.",
+            "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
+            "url": "https://www.canosho.com/",
+            "category": "Web"
+        },
+        {
+            "id": 3,
+            "name": "E-learning Web",
+            "short_description": "not clone of udemy but the concept by using react for the frontend and django restapi for backend",
+            "description": "Not a clone of Udemy but the concept is similar, using React for the frontend and Django REST API for backend.",
+            "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
+            "url": "https://www.canosho.com/",
+            "category": "Web"
+        },
+        {
+            "id": 4,
+            "name": "Chatbot",
+            "short_description": "Simple chatbot application by using react and flask",
+            "description": "Simple chatbot application by using React and Flask. Used TensorFlow framework to train the model with predefined JSON data.",
+            "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
+            "url": "https://www.canosho.com/",
+            "category": "ML"
+        }
+    ]
+}

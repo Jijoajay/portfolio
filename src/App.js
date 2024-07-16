@@ -1,23 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import { Home } from './components/Home/Home';
+import  Work  from './components/work/Work';
+import  Resume  from './components/Resume/Resume';
+import  Skills  from './components/Skills/Skills';
+import { useRef } from 'react';
 
 function App() {
+  const workRef = useRef(null);
+  const resumeRef = useRef(null);
+  const skillRef = useRef(null);
+
+  const handleScrollToWork = () => {
+    workRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
+  const handleScrollToResume = () => {
+      resumeRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
+  const handleScrollToSkill = () => {
+      skillRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Home 
+        handleScrollToWork={handleScrollToWork}
+        handleScrollToResume={handleScrollToResume}
+        handleScrollToSkill={handleScrollToSkill}
+      />
+      <Work ref={workRef}/>
+      <Resume ref={resumeRef}/>
+      <Skills ref={skillRef}/>
     </div>
   );
 }

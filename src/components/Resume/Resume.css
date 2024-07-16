@@ -1,0 +1,118 @@
+:root {
+    --primary-color: #8750f7;
+    --secondary-color: #ffffff;
+    --hover--color: #DDDDDD;
+    --theme-secondary: #2a1454;
+}
+
+.resume-page {
+    display: flex;
+    background-color: #0f0715;
+    color: #ffffff;
+    height: auto;
+    font-family: 'Sora', sans-serif;
+    gap: 30px;
+    padding: 100px;
+    transition: filter 0.3s;
+}
+.exp-cont{
+    width: 660px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.exp-cont .exp-title{
+    margin-bottom: 15px;
+    padding: 0;
+    background: var(--primary-color);
+    background: -webkit-gradient(linear, left top, right top, from(var(--primary-color)), to(var(--secondary-color)));
+    background: -o-linear-gradient(left, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(to right, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.exp-title h1{
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.exp-detail div h1{
+    font-size: 25px;
+    font-weight: 900;
+}
+.exp-detail div h2{
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 700;
+    transition: .8s color;
+}
+.exp-detail div h4{
+    font-size: 16px;
+    color: var(--hover--color);
+}
+.detail-cont {
+    position: relative;
+    padding: 20px;
+    height: 150px; 
+    border-radius: 20px;
+    overflow: hidden; 
+    background: black;
+    transition: color 1s ease, color 1s ease-in-out;
+    transition-delay: 1s;
+}
+
+.detail-cont:hover {
+    color: var(--hover--color);
+    background: linear-gradient(to right, var(--primary-color) 0%, var(--theme-secondary) 80%);
+}
+
+.detail-cont:hover h2{
+    color: var(--hover--color);
+}
+
+@media (max-width:1050px){
+    .exp-title h1{
+        font-size: 40px;
+    }
+    .exp-detail div h2{
+        font-size: 20px;
+    }
+    .exp-detail div h1{
+        font-size: 23px;
+    }
+}
+@media (max-width:900px){
+    .resume-page{
+        padding: 100px 40px 40px 40px;
+
+    }
+    .exp-title h1{
+        font-size: 35px;
+    }
+    .exp-detail div h2{
+        font-size: 15px;
+    }
+    .exp-detail div h1{
+        font-size: 20px;
+    }
+}
+@media (max-width:700px){
+    .resume-page{
+        padding: 100px 20px 20px 20px;
+        flex-direction: column;
+    }
+    .exp-cont .exp-title{
+        width: 100%;
+    }
+    .exp-cont{
+        gap: 0px;
+        width: auto;
+    }
+    .detail-cont{
+        padding: 10px 10px;
+        height: auto;
+    }
+}
