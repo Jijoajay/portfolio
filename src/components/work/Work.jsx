@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import canosho from "../../assets/img/canosho.png"
 import myntra from "../../assets/img/myntra_clone.png"
+import eLearning from "../../assets/img/eLearning.png"
 const Work = React.forwardRef((props, ref) => {
     const [isOpenProject, setIsOpenProject] = useState(false);
     const [currentTab, setCurrentTab] = useState("All");
@@ -33,8 +34,8 @@ const Work = React.forwardRef((props, ref) => {
             "name": "E-learning Web",
             "short_description": "not clone of udemy but the concept by using react for the frontend and django restapi for backend",
             "description": "Not a clone of Udemy but the concept is similar, using React for the frontend and Django REST API for backend.",
-            "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
-            "url": "https://www.canosho.com/",
+            "image": eLearning,
+            "url": "https://e-learing-frontend-1.onrender.com",
             "category": "Web"
         },
         {
