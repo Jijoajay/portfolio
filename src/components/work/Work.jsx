@@ -5,6 +5,7 @@ import { RxCross2 } from "react-icons/rx";
 import canosho from "../../assets/img/canosho.png"
 import myntra from "../../assets/img/myntra_clone.png"
 import eLearning from "../../assets/img/eLearning.png"
+import instagramClone from "../../assets/img/instagramClone.png"
 const Work = React.forwardRef((props, ref) => {
     const [isOpenProject, setIsOpenProject] = useState(false);
     const [currentTab, setCurrentTab] = useState("All");
@@ -46,7 +47,16 @@ const Work = React.forwardRef((props, ref) => {
             "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
             "url": "https://www.canosho.com/",
             "category": "ML"
-        }
+        },
+        {
+            "id": 5,
+            "name": "Instagram Clone",
+            "short_description": "complete instagram mobile application clone",
+            "description": "instatgram clone with all the features of the instagram but still under the development using react native and redux for managing the entire application state and node for the backend",
+            "image": instagramClone,
+            "url": "https://www.canosho.com/",
+            "category": "App"
+        },
     ];
 
     const handleChangeTab = (tab) => {
@@ -79,7 +89,8 @@ const Work = React.forwardRef((props, ref) => {
             <div className='work-buttons'>
                 <button className={currentTab === "All" ? 'all' : ""} onClick={() => handleChangeTab("All")} style={{width:"70px"}}>All</button>
                 <button className={currentTab === "Web" ? 'all' : ""} onClick={() => handleChangeTab("Web")} style={{width:"170px"}}>Web Development</button>
-                <button className={currentTab === "ML" ? 'all' :""} onClick={() => handleChangeTab("ML")} style={{width:"90px"}}>ML & DL</button>
+                <button className={currentTab === "ML" ? 'all' :""} onClick={() => handleChangeTab("ML")} style={{width:"auto"}}>ML & DL</button>
+                <button className={currentTab === "App" ? 'all' :""} onClick={() => handleChangeTab("App")} style={{width:"auto"}}>App</button>
             </div>
             <div className='projects'>
                 {filteredProjects.map((data) => (

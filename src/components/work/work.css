@@ -30,13 +30,31 @@
 
 .work-header h1 {
     margin-bottom: 15px;
-    padding: 0;
-    font-weight: 700;
-    font-size: 45px;
-    background: var(--primary-color);
-    background: linear-gradient(to right, var(--primary-color) 0%, var(--hover--color) 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  padding: 0;
+  font-weight: 700;
+  font-size: 50px;
+  background: var(--primary-color);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(var(--primary-color)),
+    to(var(--secondary-color))
+  );
+  background: -o-linear-gradient(
+    left,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-animation 2s ease-in-out infinite;
 }
 
 .work-title {
@@ -63,15 +81,16 @@
 }
 
 .work-buttons .app {
-    width: 70px;
+    width: auto;
+    padding: 10px;
 }
 
 .work-buttons .web {
-    width: 170px;
+    width: auto;
 }
 
 .work-buttons .chat {
-    width: 90px;
+    width: auto;
 }
 
 .work-buttons .all {
@@ -123,12 +142,14 @@
     z-index: 1;
     background-color: black;
     margin-bottom: 4%;
+    height: 400px;
     border-radius: 10px;
     transition: .5s ease-in-out;
 }
 .work-items .project-image{
     width: 100%;
     height: 100%;
+    object-fit:contain;
 }
 
 .short-popup {
@@ -203,6 +224,7 @@
 .project-detail-img .project-img {
     width: 100%;
     height: 600px;
+    object-fit: contain;
 }
 
 .project-detail-content {
@@ -296,9 +318,15 @@
     transform: rotate(180deg); /* Rotate cross */
 }
 
+@media(max-width:1250px){
+    .project-detail-cont{
+        width: auto;
+    }
+}
+
 @media (max-width:1050px){
     .short-popup{
-        width: 350px;
+        width: auto;
         height: 137px;
         padding: 15px;
         gap: 10px;
@@ -306,6 +334,12 @@
     .short-popup h3{
         font-size: 30px;
     }
+    .project-detail-cont{
+        left: 10%;
+        top: 90%; 
+        right: 1%;
+    }
+    
 }
 @media (max-width: 900px){
     .work-page{
@@ -328,6 +362,11 @@
         height: 260px;
         width: 334px;
     }
+    .project-detail-cont{
+        left: 5%;
+        top: 90%; 
+        right: 5%;
+    }
 }
 @media (max-width:700px){
     .work-page{
@@ -347,7 +386,7 @@
         height: 40px;
     }
     .work-buttons{
-        padding: 20px 0px;
+        padding: 10px 0px;
     }
     .projects{
         grid-template-columns: 1fr;
@@ -359,5 +398,21 @@
     .projects .imggg{
         width: 100%;
     }
+    .project-detail-cont{
+        left: 5%;
+        top: 190%; 
+        right: 5%;
+    }
 }
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 
