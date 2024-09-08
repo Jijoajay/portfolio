@@ -6,6 +6,9 @@ import canosho from "../../assets/img/canosho.png"
 import myntra from "../../assets/img/myntra_clone.png"
 import eLearning from "../../assets/img/eLearning.png"
 import instagramClone from "../../assets/img/instagramClone.png"
+import { Helmet } from "react-helmet-async";
+
+
 const Work = React.forwardRef((props, ref) => {
     const [isOpenProject, setIsOpenProject] = useState(false);
     const [currentTab, setCurrentTab] = useState("All");
@@ -79,6 +82,11 @@ const Work = React.forwardRef((props, ref) => {
 
     return (
         <div className='work-page' ref={ref}>
+            <Helmet>
+                <meta name="description" content="This is the work page of ajay jijo website" />
+                <meta name="keywords" content="web developing, app developing, full stack, canosho, myntra, myntra clone, riyamobiles" />
+                <link rel="canonical" href="https://portfolio-80d2.onrender.com/" />      
+            </Helmet>
             <div className='work-header'>
                 <h1>My Recent Works</h1>
                 <div className='work-title'>

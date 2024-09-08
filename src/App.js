@@ -5,6 +5,7 @@ import  Work  from './components/work/Work';
 import  Resume  from './components/Resume/Resume';
 import  Skills  from './components/Skills/Skills';
 import { useRef } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   const workRef = useRef(null);
@@ -21,16 +22,18 @@ function App() {
       skillRef.current?.scrollIntoView({ behavior: 'smooth' });
   }
   return (
-    <div>
-      <Home 
-        handleScrollToWork={handleScrollToWork}
-        handleScrollToResume={handleScrollToResume}
-        handleScrollToSkill={handleScrollToSkill}
-      />
-      <Work ref={workRef}/>
-      <Resume ref={resumeRef}/>
-      <Skills ref={skillRef}/>
-    </div>
+    <HelmetProvider>
+      <div>
+        <Home 
+          handleScrollToWork={handleScrollToWork}
+          handleScrollToResume={handleScrollToResume}
+          handleScrollToSkill={handleScrollToSkill}
+        />
+        <Work ref={workRef}/>
+        <Resume ref={resumeRef}/>
+        <Skills ref={skillRef}/>
+      </div>
+    </HelmetProvider>
   );
 }
 

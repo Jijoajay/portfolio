@@ -3,10 +3,17 @@ import "./Resume.css"
 import { PiCertificateBold } from "react-icons/pi";
 import { GiGraduateCap } from "react-icons/gi";
 import { forwardRef } from 'react';
+import { Helmet } from "react-helmet-async";
+
 
 const Resume = forwardRef((props,ref) => {
   return (
     <div className='resume-page' ref={ref}>
+        <Helmet>
+            <meta name="description" content="This is the about page of ajay jijo website" />
+            <meta name="keywords" content="sri krishna arts and science, BBA, full stack developer, Alo info tech, Tech Nexus" />
+            <link rel="canonical" href="https://portfolio-80d2.onrender.com/" />      
+        </Helmet>
         <div className='exp-cont'>
             <div className='exp-title'>
                 <h1><PiCertificateBold color='#8750f7' /></h1>

@@ -4,6 +4,7 @@ import { BsDownload } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import waving from "../../assets/img/waving.png";
+import { Helmet } from "react-helmet-async";
 export const Home = ({
   handleScrollToSkill,
   handleScrollToResume,
@@ -29,6 +30,11 @@ export const Home = ({
   const iconColor = "#8750f7";
   return (
     <div className="home-page">
+    <Helmet>
+        <meta name="description" content="This is the home page of ajay jijo website" />
+        <meta name="keywords" content="full stack developer, ajay, jijoajay, ajayjijo, mobile app developer, react, react native" />
+        <link rel="canonical" href="https://portfolio-80d2.onrender.com/" />      
+    </Helmet>
       <div className="navbar">
         <div className="logo-mail">
           <div className="logo">
