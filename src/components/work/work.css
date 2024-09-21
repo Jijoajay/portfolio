@@ -27,7 +27,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .work-header h1 {
     margin-bottom: 15px;
   padding: 0;
@@ -54,7 +53,8 @@
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-animation 2s ease-in-out infinite;
+  transition: .5s;
+
 }
 
 .work-title {
@@ -64,6 +64,7 @@
     flex-direction: column;
     gap: 0px;
     align-items: center;
+    transition: .7s;
 }
 
 .work-buttons {
@@ -403,6 +404,7 @@
         top: 190%; 
         right: 5%;
     }
+    
 }
 @keyframes gradient-animation {
     0% {
@@ -416,3 +418,46 @@
     }
   }
 
+.autoshow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(30% 10%);
+}
+.work-items:nth-child(odd) {
+    animation: imageLeftAnimation ;
+    animation-timeline: view(auto 3%);
+}
+
+.work-items:nth-child(even) {
+    animation: imageRightAnimation ;
+    animation-timeline: view(auto 3%);
+}
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(250px) scale(0.4);
+    }to{
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+
+@keyframes imageLeftAnimation{
+    from{
+       opacity: 0;
+       transform: translateX(150px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+}
+@keyframes imageRightAnimation{
+    from{
+       opacity: 0;
+       transform: translateX(-150px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
+    
+}

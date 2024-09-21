@@ -87,14 +87,14 @@ const Work = React.forwardRef((props, ref) => {
                 <meta name="keywords" content="web developing, app developing, full stack, canosho, myntra, myntra clone, riyamobiles" />
                 <link rel="canonical" href="https://portfolio-80d2.onrender.com/" />      
             </Helmet>
-            <div className='work-header'>
-                <h1>My Recent Works</h1>
-                <div className='work-title'>
+            <div className='work-header '>
+                <h1 className='autoshow'>My Recent Works</h1>
+                <div className='work-title autoshow'>
                     <p>We put your ideas and thus your wishes in the form of a unique web project that</p>
                     <p>inspires you and your customers.</p>
                 </div>
             </div>
-            <div className='work-buttons'>
+            <div className='work-buttons autoshow'>
                 <button className={currentTab === "All" ? 'all' : ""} onClick={() => handleChangeTab("All")} style={{width:"70px"}}>All</button>
                 <button className={currentTab === "Web" ? 'all' : ""} onClick={() => handleChangeTab("Web")} style={{width:"170px"}}>Web Development</button>
                 <button className={currentTab === "ML" ? 'all' :""} onClick={() => handleChangeTab("ML")} style={{width:"auto"}}>ML & DL</button>

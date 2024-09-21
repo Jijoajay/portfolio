@@ -26,6 +26,7 @@ export const Home = ({
     handleScrollToSkill();
     setIsMenuOpen(false);
   };
+  
 
   const iconColor = "#8750f7";
   return (
@@ -105,7 +106,7 @@ export const Home = ({
             </div>
           </div>
         </div>
-        <div className="hero-img">
+        <div className="hero-img imgShow">
           <img src={waving} alt="rohit sharma" />
         </div>
       </div>

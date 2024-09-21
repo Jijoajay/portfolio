@@ -94,7 +94,7 @@
   flex-direction: column;
   width: 50%;
   padding: 0px 15px 0px 0px;
-  animation: slide-in 3s ease-in forwards;
+  animation: slide-in 1s forwards;
 }
 
 .hero-content h3 {
@@ -212,7 +212,6 @@
 }
 
 .hero-img img {
-  border: 0.5px solid var(--primary-color);
   border-radius: 10px;
   object-fit: cover;
   transform: rotate(10deg);
@@ -226,7 +225,6 @@
   width: 441px;
   height: 479px;
   transform: rotate(0deg);
-  border: 1.5px solid var(--primary-color);
 }
 .ham-menu {
   display: none;
@@ -257,6 +255,7 @@
 .navbar-menu-mobile p {
   font-size: 25px;
 }
+
 
 @keyframes slideDown {
   from {
@@ -413,11 +412,27 @@
     background-position: 0% 50%;
   }
 }
+
 @keyframes slide-in{
-    0% {
+    from {
        opacity: 0;
-    }
-    100% {
+       transform: translateX(-300px) ;
+      }
+      to {
         opacity: 1;
+        transform: translateX(0px) ;
     }
+}
+.imgShow{
+  animation: imageShow 2s ;
+  /* animation-timeline: view(50% 0%); */
+}
+@keyframes imageShow{
+  from{
+    opacity: 0;
+    transform:translateY(-800px) scale(.3)
+  }to{
+    opacity: 1;
+    transform:translateY(0px) translateX(0px) scale(1)
+  }
 }

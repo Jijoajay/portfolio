@@ -17,55 +17,55 @@ const Skills = forwardRef((props,ref) => {
             <meta name="keywords" content="react, python, flask, django, react native, typescript, javascript, aws, tensorflow" />
             <link rel="canonical" href="https://portfolio-80d2.onrender.com/" />      
         </Helmet>
-        <h1 className='skill-title'>My Skills</h1>
-        <div className='skill-detail'>
+        <h1 className='skill-title autoshow'>My Skills</h1>
+        <div className='skill-detail autoshow'>
             <p>We put your ideas and thus your wishes in the form of a unique web project that</p>
             <p>inspires you and you customers.</p>
         </div>
         <div className='all-skill'>
-            <div className='skill-cont'>
-                <div className='img-cont'>
+            <div className='skill-cont iconShow'>
+                <div className='img-cont '>
                     <img src={pythonImg} alt="" />
                     <h1>80%</h1>
                 </div>
                 <h1>Python</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont  iconShow'>
                 <div className='img-cont'>
                     <img src={flaskImg} alt="" />
                     <h1>90%</h1>
                 </div>
                 <h1>Flask</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont iconShow'>
                 <div className='img-cont'>
                     <img src={djangoImg} alt="" />
                     <h1>85%</h1>
                 </div>
                 <h1>Django</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont iconShow'>
                 <div className='img-cont'>
                     <img src={reactImg} alt="" />
                     <h1>85%</h1>
                 </div>
                 <h1>React</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont iconShow'>
                 <div className='img-cont'>
                     <img src={mysqlImg} alt="" />
                     <h1>80%</h1>
                 </div>
                 <h1>MySQL</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont iconShow'>
                 <div className='img-cont'>
                     <img src={tfImg} alt="" />
                     <h1>50%</h1>
                 </div>
                 <h1>Tensorflow</h1>
             </div>
-            <div className='skill-cont'>
+            <div className='skill-cont iconShow'>
                 <div className='img-cont'>
                     <img src={jsImg} alt="" />
                     <h1>60%</h1>
