@@ -51,15 +51,15 @@ const Work = React.forwardRef((props, ref) => {
             "url": "https://www.canosho.com/",
             "category": "ML"
         },
-        {
-            "id": 5,
-            "name": "Instagram Clone",
-            "short_description": "complete instagram mobile application clone",
-            "description": "instatgram clone with all the features of the instagram but still under the development using react native and redux for managing the entire application state and node for the backend",
-            "image": instagramClone,
-            "url": "https://www.canosho.com/",
-            "category": "App"
-        },
+    //     {
+    //         "id": 5,
+    //         "name": "Instagram Clone",
+    //         "short_description": "complete instagram mobile application clone",
+    //         "description": "instatgram clone with all the features of the instagram but still under the development using react native and redux for managing the entire application state and node for the backend",
+    //         "image": instagramClone,
+    //         "url": "https://www.canosho.com/",
+    //         "category": "App"
+    //     },
     ];
 
     const handleChangeTab = (tab) => {
@@ -67,6 +67,7 @@ const Work = React.forwardRef((props, ref) => {
     }
 
     const handleOpenPopUp = (project) => {
+        console.log("prokect", project)
         setCurrentProject(project);
         setIsOpenProject(true);
     }
@@ -100,21 +101,27 @@ const Work = React.forwardRef((props, ref) => {
                 <button className={currentTab === "ML" ? 'all' :""} onClick={() => handleChangeTab("ML")} style={{width:"auto"}}>ML & DL</button>
                 <button className={currentTab === "App" ? 'all' :""} onClick={() => handleChangeTab("App")} style={{width:"auto"}}>App</button>
             </div>
-            <div className='projects'>
-                {filteredProjects.map((data) => (
-                    <div key={data.id} className='work-items'>
-                        <img src={data.image} className="project-image" alt="Project" />
-                        <div className='short-popup'>
-                            <div className='project-name'>
-                                <h3>{data.name}</h3>
-                                <p>{data.short_description}</p>
-                            </div>
-                            <div className='arrow-container'>
-                                <FaArrowRight color={"white"} onClick={() => handleOpenPopUp(data)} className='arrow'/>
+            <div className='flex justify-center items-center'>
+                <div className='grid grid-cols-1 gap-[4vw] pb-[1.5em]'>
+                    {filteredProjects.map((data, index) => (
+                        <div 
+                            key={data.id} 
+                            className={`h-[300px] w-full md:h-[400px] lg:w-[800px] sticky top-[100px] transition-all duration-500t`}
+                            onClick={() => handleOpenPopUp(data)} 
+                         >
+                            <img src={data.image} className="project-image" alt="Project" style={{ paddingTop: `${30 * index }px`,  }}  />
+                            <div className='short-popup'>
+                                <div className='project-name'>
+                                    <h3>{data.name}</h3>
+                                    <p>{data.short_description}</p>
+                                </div>
+                                <div className='arrow-container'>
+                                    <FaArrowRight color={"white"} className='arrow'/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
             {isOpenProject && currentProject && (
                 <div className='project-detail-cont'>
@@ -138,5 +145,6 @@ const Work = React.forwardRef((props, ref) => {
             )}
         </div>
     );
-});
+}
+);
 export default Work;

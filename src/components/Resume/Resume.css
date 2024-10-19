@@ -190,7 +190,7 @@
   @keyframes slideLeftShowAnimation{
     from{
         opacity: 0;
-        transform: translatey(90px) translateX(250px) scale(.4) ;
+        transform: translateY(90px) translateX(250px) scale(.4) ;
     }to{
         opacity: 1;
         transform: translateY(0) translateX(0px) scale(1) ;
@@ -200,7 +200,7 @@
   @keyframes slideRightShowAnimation{
     from{
       opacity: 0;
-      transform: translatey(-90px) translateX(-250px) scale(.4) ;
+      transform: translateY(-90px) translateX(-250px) scale(.4) ;
     }to{
       opacity: 1;
       transform: translateY(0) translateX(0px) scale(1) ;
@@ -211,7 +211,7 @@
     
     from{
         opacity: 0;
-        transform: translatey(90px) translateX(-100px) scale(.4) ;
+        transform: translateY(90px) translateX(-100px) scale(.4) ;
     }to{
         opacity: 1;
         transform: translateY(0) translateX(0px) scale(1) ;
@@ -221,7 +221,7 @@
   @keyframes mobileRightShowAnimation{
     from{
         opacity: 0;
-        transform: translatey(-90px) translateX(100px) scale(.4) ;
+        transform: translateY(-90px) translateX(100px) scale(.4) ;
     }to{
         opacity: 1;
         transform: translateY(0) translateX(0px) scale(1) ;
