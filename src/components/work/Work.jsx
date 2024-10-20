@@ -102,11 +102,11 @@ const Work = React.forwardRef((props, ref) => {
                 <button className={currentTab === "App" ? 'all' :""} onClick={() => handleChangeTab("App")} style={{width:"auto"}}>App</button>
             </div>
             <div className='flex justify-center items-center'>
-                <div className='grid grid-cols-1 gap-[4vw] pb-[1.5em]'>
+                <div className='grid grid-cols-1  md:gap-[4vw] pb-[1.5em]'>
                     {filteredProjects.map((data, index) => (
                         <div 
                             key={data.id} 
-                            className={`h-[300px] w-full md:h-[400px] lg:w-[800px] sticky top-[100px] transition-all duration-500t`}
+                            className={`h-[180px] w-full md:h-[400px] lg:w-[800px] sticky top-[150px] md:top-[100px] transition-all duration-500t`}
                             onClick={() => handleOpenPopUp(data)} 
                          >
                             <img src={data.image} className="project-image" alt="Project" style={{ paddingTop: `${30 * index }px`,  }}  />
