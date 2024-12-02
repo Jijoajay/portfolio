@@ -113,10 +113,9 @@
   height: var(--small);
   border-radius: 50%;
   background-color: white;
-  animation: snow 6s linear infinite, wind 10s ease-in-out infinite;
   top:0%;
   opacity: 0;
-  animation: fall 7s linear infinite;
+  animation: fall 8s linear infinite, wind 10s ease-in-out infinite;
 }
 .snowflake:nth-child(2n+3){
   width: var(--medium);
@@ -126,12 +125,19 @@
 @keyframes fall {
   0% {
     transform: translateY(-100%);
+    transform: translateX(50px);
     opacity: 1;
   }
   100% {
     transform: translateY(100vh); /* Adjust to fall through the screen */
   }
 }
+
+/* @keyframes wind{
+  50%{
+    transform: translateX(-10px);
+  }
+} */
 
 .hero-content {
   display: flex;

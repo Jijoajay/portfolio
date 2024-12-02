@@ -79,7 +79,7 @@ export const Home = ({
               <div 
                 className="snowflake" 
                 key={index} 
-                style={{left:`${(Math.floor(Math.random() * 100))}%`,animationDelay :`${(index + 1) * 0.5}s`}
+                style={{left:`${(Math.floor(Math.random() * 100))}%`,animationDelay :`${(index + 1) * .5}s`}
               }></div>
             ))
           }
