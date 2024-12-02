@@ -5,6 +5,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import waving from "../../assets/img/waving.png";
 import { Helmet } from "react-helmet-async";
+import hatIcon from "../../assets/img/hat.png"
+
 export const Home = ({
   handleScrollToSkill,
   handleScrollToResume,
@@ -26,7 +28,9 @@ export const Home = ({
     handleScrollToSkill();
     setIsMenuOpen(false);
   };
+
   
+
 
   const iconColor = "#8750f7";
   return (
@@ -40,6 +44,7 @@ export const Home = ({
         <div className="logo-mail">
           <div className="logo">
             <h1 className="logo-ajay">AJAY</h1>
+            <img src={hatIcon} alt="hat-icon" className="hat-icon" />
           </div>
           <div>
             <a href="mailto:jijoajay45@gmail.com" target="_top">
@@ -68,6 +73,17 @@ export const Home = ({
         <p onClick={handleMobileSkillScroll}>Skills</p>
       </div>
       <div className="home-hero">
+        <div className="snowfall">
+          {
+            Array(20).fill(0).map((_, index)=>(
+              <div 
+                className="snowflake" 
+                key={index} 
+                style={{left:`${(Math.floor(Math.random() * 100))}%`,animationDelay :`${(index + 1) * 0.5}s`}
+              }></div>
+            ))
+          }
+        </div>
         <div className="hero-content">
           <h3>I am Ajay</h3>
           <p className="content">

@@ -31,6 +31,14 @@
 
 .logo {
   cursor: pointer;
+  position: relative;
+}
+.hat-icon{
+  position: absolute;
+  top: -5px;
+  right:-18px;
+  height: 40px;
+  width: 40px;
 }
 .logo-ajay{
   font-size: 24px;
@@ -87,6 +95,42 @@
   display: flex;
   width: 100vw;
   padding: 100px;
+  position:relative;
+}
+
+.snowfall{
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.snowflake{
+  --small:5px;
+  --medium:7px;
+  position: absolute;
+  width: var(--small);
+  height: var(--small);
+  border-radius: 50%;
+  background-color: white;
+  animation: snow 6s linear infinite, wind 10s ease-in-out infinite;
+  top:0%;
+  opacity: 0;
+  animation: fall 7s linear infinite;
+}
+.snowflake:nth-child(2n+3){
+  width: var(--medium);
+  height: var(--medium);
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh); /* Adjust to fall through the screen */
+  }
 }
 
 .hero-content {
