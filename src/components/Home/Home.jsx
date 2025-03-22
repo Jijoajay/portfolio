@@ -6,6 +6,7 @@ import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import waving from "../../assets/img/waving.png";
 import { Helmet } from "react-helmet-async";
 import hatIcon from "../../assets/img/hat.png"
+import deerIcon from "../../assets/img/deer.png"
 
 export const Home = ({
   handleScrollToSkill,
@@ -73,9 +74,9 @@ export const Home = ({
         <p onClick={handleMobileSkillScroll}>Skills</p>
       </div>
       <div className="home-hero">
-        <div className="snowfall">
+        {/* <div className="snowfall">
           {
-            Array(20).fill(0).map((_, index)=>(
+            Array(1000).fill(0).map((_, index)=>(
               <div 
                 className="snowflake" 
                 key={index} 
@@ -83,16 +84,13 @@ export const Home = ({
               }></div>
             ))
           }
-        </div>
+        </div> */}
         <div className="hero-content">
           <h3>I am Ajay</h3>
           <p className="content">
             Full Stack  +<br />
             Mobile App Developer
           </p>
-          {/* <p className="content">
-            Full Stack Developer 
-          </p> */}
           <h4>
             I break down complex user experience problems to create
             integrity-focused solutions that connect billions of people

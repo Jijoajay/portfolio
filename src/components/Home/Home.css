@@ -115,11 +115,25 @@
   background-color: white;
   top:0%;
   opacity: 0;
-  animation: fall 8s linear infinite, wind 10s ease-in-out infinite;
+  animation: fall 6.5s linear infinite, wind 10s ease-in-out infinite;
 }
 .snowflake:nth-child(2n+3){
   width: var(--medium);
   height: var(--medium);
+}
+
+
+@keyframes move{
+  0%{
+    opacity: 0;
+    left: -50%;
+    bottom:-50%;
+    transform: scale(0);
+  }100%{
+    left:35%;
+    bottom:-10%;
+    transform: scale(1);
+  }
 }
 
 @keyframes fall {
@@ -129,15 +143,10 @@
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh); /* Adjust to fall through the screen */
+    transform: translateY(100vh);
   }
 }
 
-/* @keyframes wind{
-  50%{
-    transform: translateX(-10px);
-  }
-} */
 
 .hero-content {
   display: flex;

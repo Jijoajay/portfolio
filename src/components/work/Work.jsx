@@ -4,8 +4,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import canosho from "../../assets/img/canosho.png"
 import myntra from "../../assets/img/myntra_clone.png"
-import eLearning from "../../assets/img/eLearning.png"
-import instagramClone from "../../assets/img/instagramClone.png"
+import magicAisles from "../../assets/img/magic aisles.png"
+import ashaHospital from "../../assets/img/ashaHospital.png"
+import dotz from "../../assets/img/green dotz.png"
 import { Helmet } from "react-helmet-async";
 
 
@@ -13,8 +14,36 @@ const Work = React.forwardRef((props, ref) => {
     const [isOpenProject, setIsOpenProject] = useState(false);
     const [currentTab, setCurrentTab] = useState("All");
     const [currentProject, setCurrentProject] = useState(null);
+    const [modalPosition, setModalPosition] = useState({ top: 0, left: 0 });
 
     const projects = [
+        {
+            "id": 5,
+            "name": "Magic Aisles",
+            "short_description": "Magic Aisles is a client project still under developement",
+            "description": "Developed a responsive static website for a client using React.js, Tailwind CSS, and Framer Motion for smooth animations. Implemented Intersection Observer API for scroll-based interactions, ensuring dynamic content appearance as per the client’s requirements.",
+            "image": magicAisles,
+            "url": "https://magic-aisles.vercel.app/",
+            "category": "Web"
+        },
+        {
+            "id": 6,
+            "name": "Asha Hospital",
+            "short_description": "Asha hospital is a static website and its complete responsive one and hosted this websited in the AWS EC2",
+            "description": "Developed a fully responsive static website for a hospital using React.js and Tailwind CSS. The website is optimized for mobile devices, ensuring a smooth user experience.",
+            "image": ashaHospital,
+            "url": "https://www.asha.greendotz.in/",
+            "category": "Web"
+        },
+        {
+            "id": 7,
+            "name": "Green Dotz",
+            "short_description": "Green Dotz is a static website developed to showcase the products ",
+            "description": "Developed Greendotz, a single-page static e-commerce website designed to showcase available products. Built using React.js and Tailwind CSS, the website is fully responsive and optimized for fast performance. Deployed on AWS for high availability and scalability.",
+            "image": dotz,
+            "url": "https://www.greendotz.in/",
+            "category": "Web"
+        },
         {
             "id": 1,
             "name": "Canosho",
@@ -33,44 +62,22 @@ const Work = React.forwardRef((props, ref) => {
             "url": "https://myntra-clone-4rzz.onrender.com/",
             "category": "Web"
         },
-        {
-            "id": 3,
-            "name": "E-learning Web",
-            "short_description": "not clone of udemy but the concept by using react for the frontend and django restapi for backend",
-            "description": "Not a clone of Udemy but the concept is similar, using React for the frontend and Django REST API for backend.",
-            "image": eLearning,
-            "url": "https://e-learing-frontend-1.onrender.com",
-            "category": "Web"
-        },
-        {
-            "id": 4,
-            "name": "Chatbot",
-            "short_description": "Simple chatbot application by using react and flask",
-            "description": "Simple chatbot application by using React and Flask. Used TensorFlow framework to train the model with predefined JSON data.",
-            "image": "https://dezyre.gumlet.io/images/resource/chatbot-mini-project-in-python-with-source-code/Python+Chatbot+Project+with+Source+Code.png",
-            "url": "https://www.canosho.com/",
-            "category": "ML"
-        },
-    //     {
-    //         "id": 5,
-    //         "name": "Instagram Clone",
-    //         "short_description": "complete instagram mobile application clone",
-    //         "description": "instatgram clone with all the features of the instagram but still under the development using react native and redux for managing the entire application state and node for the backend",
-    //         "image": instagramClone,
-    //         "url": "https://www.canosho.com/",
-    //         "category": "App"
-    //     },
     ];
 
     const handleChangeTab = (tab) => {
         setCurrentTab(tab);
     }
 
-    const handleOpenPopUp = (project) => {
-        console.log("prokect", project)
+
+    const handleOpenPopUp = (project, event) => {
+        const rect = event.target.getBoundingClientRect(); // Get image position
+        setModalPosition({ 
+            top: rect.top + window.scrollY, // Adjust for scroll position
+            left: rect.left + rect.width / 2  // Center modal horizontally
+        });
         setCurrentProject(project);
         setIsOpenProject(true);
-    }
+    };
 
     const handleClosePopUp = () => {
         setIsOpenProject(false);
@@ -95,19 +102,19 @@ const Work = React.forwardRef((props, ref) => {
                     <p>inspires you and your customers.</p>
                 </div>
             </div>
-            <div className='work-buttons autoshow'>
+            {/* <div className='work-buttons autoshow'>
                 <button className={currentTab === "All" ? 'all' : ""} onClick={() => handleChangeTab("All")} style={{width:"70px"}}>All</button>
                 <button className={currentTab === "Web" ? 'all' : ""} onClick={() => handleChangeTab("Web")} style={{width:"170px"}}>Web Development</button>
                 <button className={currentTab === "ML" ? 'all' :""} onClick={() => handleChangeTab("ML")} style={{width:"auto"}}>ML & DL</button>
                 <button className={currentTab === "App" ? 'all' :""} onClick={() => handleChangeTab("App")} style={{width:"auto"}}>App</button>
-            </div>
+            </div> */}
             <div className='flex justify-center items-center'>
                 <div className='grid grid-cols-1  md:gap-[4vw] pb-[1.5em]'>
                     {filteredProjects.map((data, index) => (
                         <div 
                             key={data.id} 
-                            className={`h-[180px] w-full md:h-[400px] lg:w-[800px] sticky top-[150px] md:top-[100px] transition-all duration-500t`}
-                            onClick={() => handleOpenPopUp(data)} 
+                            className={`h-[180px] w-full md:h-[400px] lg:w-[800px] sticky top-[150px] md:top-[100px] transition-all duration-500`}
+                            onClick={(event) => handleOpenPopUp(data, event)}
                          >
                             <img src={data.image} className="project-image" alt="Project" style={{ paddingTop: `${30 * index }px`,  }}  />
                             <div className='short-popup'>
@@ -124,7 +131,10 @@ const Work = React.forwardRef((props, ref) => {
                 </div>
             </div>
             {isOpenProject && currentProject && (
-                <div className='project-detail-cont'>
+                <div 
+                    className='project-detail-cont' 
+                    style={{ position: "absolute", top: `${modalPosition.top}px`, left: `${modalPosition.left}px`, transform: "translate(-50%, 0)" }}
+                >
                     <div className='project-detail'>
                         <div className='project-detail-img'>
                             <img src={currentProject.image} className='project-img' alt="project_image" />
